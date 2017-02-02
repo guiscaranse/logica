@@ -1,4 +1,4 @@
-import re, math
+import re
 print ("Este programa irá calcular em qual faixa do espectro sonoro a onda está.")
 f_text = input("Por favor digite a frequência em Hz, Mhz, Khz, Ghz (Exemplo: 20Ghz): ")
 # Extrai dígitos
