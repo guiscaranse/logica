@@ -23,8 +23,13 @@ def gerador_pascal(linhas):
     return resultados
 
 def pascal(triangulo):
+    for a in range(len(triangulo)):
+        print(" ", a, end="")
     # Escreve as linhas do triângulo
+    print('')
     for linha in triangulo:
-        print(linha)
+        linha = str(linha).replace("[", "")
+        linha = str(linha).replace("]", "")
+        print(" ", linha)
 pascal(gerador_pascal(count))
 print()
