@@ -1,6 +1,9 @@
-import math
-count = int(input("Quantas linhas você quer? "))
+import math, os, sys
+from colorama import *
+init(autoreset=True)
 
+count = int(input("Quantas linhas você quer? "))
+print(Back.RED + "Gerando triângulo de pascal!")
 def combinacoes(n, p):
     return [sum(par) for par in zip(n, p)]
 
@@ -30,9 +33,25 @@ def pascal(triangulo):
     print("")
     x = 0
     for linha in triangulo:
-        linha = str(linha).replace("[", "")
-        linha = str(linha).replace("]", "")
+        linha = str(linha).replace("[", "").replace("]", "") # Remove []
         print(x, "|", linha) # Indica a linha e printa a linha do triangulo
         x += 1
+
+
+
+def pascal_linhas(triangulo, linha):
+    if linha > (len(triangulo) - 1):
+        sys.exit(Back.RED + "Coordenadas inválidas!")
+    print(Fore.RED + "Mostrando relação da linha:", "[", linha, "]")
+    x = 0
+    for linhas in triangulo:
+        linhas = str(linhas).replace("[", "").replace("]", "") # Remove []
+        if((x+1) == linha):
+            print(Back.GREEN + "2^" + str(x), "|", Back.GREEN + linhas) # Indica a linha e printa a linha do triangulo
+        else:
+            print("2^" + str(x), "|", linhas) # Indica a linha e printa a linha do triangulo
+        x += 1
 pascal(gerador_pascal(count))
-print()
+l = int(input("Escolha a linha do objeto: "))
+os.system("cls")
+pascal_linhas(gerador_pascal(count), l)
