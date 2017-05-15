@@ -1,4 +1,4 @@
-package exercicio2;
+package exercicio02;
 
 class TestaCronometro {
 	public static void main(String[] args) {
